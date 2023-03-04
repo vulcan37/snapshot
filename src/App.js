@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Beaches from './components/Beaches';
+import Birds from './components/Birds';
+import Food from './components/Food';
+import Mountains from './components/Mountains';
+import Search from './components/Search';
+import TopNavBar from './components/TopNavBar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TopNavBar />
+
+      <Routes>
+        <Route path='/mountains' element={<Mountains />} />
+        <Route path='/birds' element={<Birds />} />
+        <Route path='/beaches' element={<Beaches />} />
+        <Route path='/Food' element={<Food />} />
+        <Route path='/search' element={<Search />} />
+
+      </Routes>
+
     </div>
   );
 }
